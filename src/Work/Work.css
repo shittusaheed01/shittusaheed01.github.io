@@ -1,0 +1,132 @@
+.work {
+  background-color: rgba(201, 196, 196, 0.205);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: left;
+}
+.work-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 90px auto;
+}
+.work-heading h2 {
+  color: orangered;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 3px;
+  width: fit-content;
+}
+.work-heading p {
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  padding: 0;
+  font-weight: 900;
+  color: rgb(61, 19, 4);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  max-width: 500px;
+}
+.work-grid {
+  align-self: flex-start;
+  width: 100%;
+    display: grid;
+    margin-top: 15px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 0;
+}
+.work-card {
+  position: relative;
+  max-width: 300px;
+}
+.work-img {
+  width: 100%;
+  border-radius: 20px;
+  /* padding: 10px; */
+  overflow: hidden;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  opacity: 1;
+  /* border: 1px solid red; */
+
+  width: 100%;
+  /* max-width: 150px; */
+  box-shadow: 3px 3px 3px 3px rgb(232, 235, 238);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin: 10px;
+  margin-left: 0px;
+}
+.work-img img {
+  display: block;
+  width: 100%;
+}
+.work-overlay {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  /* border: 1px solid red; */
+}
+.work-card:hover .work-img {
+  opacity: 0.3;
+}
+.work-card:hover .work-overlay {
+  opacity: 1;
+}
+.work-overlay p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(66, 6, 6);
+  /* margin-bottom: 5px; */
+  padding: 5px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  max-width: 150px;
+  margin:0 auto 5px ;
+}
+.work-overlay button{
+    outline: none;
+    padding: 8px;
+    border: 1px solid black ;
+    border-radius: 5px;
+    background-color: white;
+    margin: 5px;
+    font-size: 15px;
+    font-weight: 550;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor: pointer;
+}
+@media screen and (min-width: 700px) {
+  .work-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+  }
+  .work-card {
+    max-width: 300px;
+    align-self: center;
+  }
+}

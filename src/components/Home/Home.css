@@ -1,0 +1,87 @@
+.home{
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: black;
+  text-align: left;
+  /* border: 1px solid; */
+  font-size: 10px;
+  
+}
+.home-cont{
+  padding-top: 80px;
+  width: 80%;
+  margin: auto;
+}
+.home-cont p{
+  font-size: 14px;
+  font-weight: 900;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: brown;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  max-width: 600px;
+}
+.home-cont h1{
+  color: rgb(36, 21, 21);
+  color: orangered;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+.home-cont h2{
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 5px auto;
+  padding: 0;
+  /* color: rgb(204, 86, 44); */
+}
+.home-btn{
+  margin-top: 10px;
+}
+.home-btn button{
+  display: flex;
+  padding: 10px;
+  outline: none;
+  border: 2px solid black;
+  background-color: white;
+  font-size: 14px;
+  transition: 500ms;
+}
+.home-btn button:hover{
+  border: 2px solid orangered;
+  background-color: orangered;
+  color: white;
+  
+}
+.home-arrow{
+  margin-left: 5px;
+}
+
+.home-arrow-hover{
+  transform: rotate(90deg);
+  margin-left: 5px;
+}
+@media screen and (min-width: 700px) {
+  .home-cont h1{
+    font-size: 60px;
+  }
+  .home-cont p{
+    font-size: 20px;
+  }
+  .home-cont h2{
+    font-size: 30px;
+  }
+  .home-btn button{
+    font-size: 20px;
+  }
+}

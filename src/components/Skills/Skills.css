@@ -1,0 +1,83 @@
+.skills {
+  /* background-color: rgb(187, 234, 240); */
+  /* background-color: #0a192f; */
+  background-color: aliceblue;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* color: grey; */
+  align-items: flex-start;
+}
+.skills-containter{
+    width: 80%;
+    margin: auto;
+    /* margin-top: 20px; */
+}
+.skills-dets h2{
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 3px;
+  border-bottom: 2px solid red;
+  width: fit-content;
+}
+.skills-dets p{
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    padding: 0;
+    font-weight: 900;
+    color: rgb(61, 19, 4);
+    color: grey;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 500px;
+}
+.skills-grid{
+    margin-top: 15px;
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    align-items: center;
+    color: grey;
+}
+.skills-img-div{
+    width: 100%;
+    max-width: 150px;
+    box-shadow: 3px 3px 3px 3px rgb(232, 235, 238);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: 10px;
+}
+.skills-img-div img{
+    width: 50%;
+    object-fit: contain;
+}
+.skills-img-div p{
+    margin: 3px auto;
+    padding: 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.skills-img-div:hover{
+    transform: scale(1.1);
+}
+@media screen and (min-width: 700px) {
+    .skills-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+    /* .skills-img-div{
+        max-width: 200px;
+    } */
+    .skills-img-div img{
+        width: 100%;
+        max-height: 100px;
+    }
+}
