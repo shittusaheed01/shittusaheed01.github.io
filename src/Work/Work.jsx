@@ -30,7 +30,7 @@ const Work = () => {
                 </div>
                 <div className="work-card">
                     <div className="work-img">
-                        <img src={Item7} alt="Restaurant Preview" />
+                        <img src={TwitterImg} alt="Restaurant Preview" />
                     </div>
                     <div className="work-overlay">
                         <p>Restaurant Website with Vanilla JS</p>
@@ -44,7 +44,7 @@ const Work = () => {
                 </div>
                 <div className="work-card">
                     <div className="work-img">
-                        <img src={Item7} alt="Restaurant Preview" />
+                        <img src={TextColor} alt="Restaurant Preview" />
                     </div>
                     <div className="work-overlay">
                         <p>Restaurant Website with Vanilla JS</p>

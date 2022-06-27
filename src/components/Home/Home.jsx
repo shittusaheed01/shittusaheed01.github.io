@@ -18,7 +18,7 @@ const Home = () => {
         I'm A Frontend developer, with a keen eye for the littlest detail in designs. I'm focused on building responsive frontend applications because I enjoy seeing designs come to life
       </p>
       <div className='home-btn'>
-      <Link to="projects" smooth={true} offset={50} duration={500}>
+      <Link to="projects" smooth={true} duration={500}>
       <button onMouseEnter={handleHover} onMouseLeave = {handleHovOut} >View Work
           <HiArrowRight className={!hov ? "home-arrow" : "home-arrow-hover"} /> 
           </button>

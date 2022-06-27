@@ -1,0 +1,70 @@
+.contact{
+    background-color: rgba(151, 201, 248, 0.658);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: left;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+.form-dets{
+
+}
+.form-dets h2{
+    color: orangered;
+    border-bottom: 2px solid red;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    width: fit-content;
+}
+.form-dets p{
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 5px auto;
+    padding: 0;
+    font-weight: 900;
+    color: rgb(61, 19, 4);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    max-width: 500px;
+}
+form input, form textarea{
+    padding: 9px;
+    margin-bottom: 5px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color:cornsilk ;
+}
+form input:focus, form textarea:focus{
+    border-color: orangered;
+}
+
+.form button{
+    padding: 10px;
+    outline: none;
+    border: 2px solid black;
+    background-color: white;
+    font-size: 14px;
+    transition: 500ms;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.form button:hover{
+    border: 2px solid orangered;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+}

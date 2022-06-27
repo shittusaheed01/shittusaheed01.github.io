@@ -18,10 +18,16 @@
 .logo {
   width: 100%;
   object-fit: contain;
+  cursor: pointer;
 }
 .hamburger {
   margin-right: 10px;
   z-index: 7;
+  cursor: pointer;
+  transition: all 500ms;
+}
+.hamburger:hover{
+  color: orangered;
 }
 .hide {
   display: none;
@@ -53,14 +59,21 @@
 }
 .mobile-links li:hover{
   color: rgb(99, 92, 92);
+  color: orangered;
+}
+.mobile-links li:focus{
+  outline: none;
 }
 .desktop-links {
   display: none;
   margin-right: 10px;
   cursor: pointer;
 }
-.desktop-links:hover{
-  color: rgb(99, 92, 92);
+.desktop-links li:hover{
+  color: orangered;
+}
+.desktop-links li:focus{
+  outline: none;
 }
 @media screen and (min-width: 700px) {
   .navbar{
@@ -82,5 +95,6 @@
   .desktop-links li {
     list-style: none;
     padding: 0 10px;
+    display: block;
   }
 }

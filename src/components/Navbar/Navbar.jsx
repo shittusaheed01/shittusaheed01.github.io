@@ -29,7 +29,7 @@ function Navbar(props) {
         <li><Link to="projects" onClick={handleClick} smooth={true} duration={500}>
           Project
         </Link></li>
-        <li><Link to="home" onClick={handleClick} smooth={true} duration={500}>
+        <li><Link to="contact" onClick={handleClick} smooth={true} duration={500}>
           Contact
         </Link></li>
       </ul>
@@ -47,7 +47,7 @@ function Navbar(props) {
           <li><Link to="projects" smooth={true} duration={500}>
           Project
         </Link></li>
-          <li><Link to="home" smooth={true} duration={500}>
+          <li><Link to="contact" smooth={true} duration={500}>
           Contact
         </Link></li>
         </ul>
