@@ -4,8 +4,8 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Home from './components/Home/Home.jsx';
 import About from './components/About/About';
 import Skills from './components/Skills/Skills';
-import Work from './Work/Work';
-import Contact from './Contact/Contact';
+import Work from './components/Work/Work';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (

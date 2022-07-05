@@ -24,6 +24,7 @@
   padding: 0;
   letter-spacing: 3px;
   width: fit-content;
+  border-bottom: 2px solid red;
 }
 .work-heading p {
   font-size: 18px;

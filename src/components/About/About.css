@@ -43,6 +43,25 @@
     letter-spacing: 2px;
     max-width: 500px;
 }
+
+.loading-name {
+    /* position: relative; */
+}
+.loading-name span {
+    /* position: relative; */
+    display: inline-block;
+    /* font-size: 40px; */
+    /* text-transform: uppercase; */
+    animation: flip 3s infinite;
+    animation-delay: calc(.3s * var(--i))
+}
+@keyframes flip {
+    0%,80% {
+    transform: rotateY(360deg) 
+    }
+}
+
+
 @media screen and (min-width: 700px) {
     /* .about-container{
         max-width: 700px;

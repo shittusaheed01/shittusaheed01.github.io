@@ -55,16 +55,20 @@ form input:focus, form textarea:focus{
 .form button{
     padding: 10px;
     outline: none;
-    border: 2px solid black;
+    border: 2px solid white;
     background-color: white;
     font-size: 14px;
     transition: 500ms;
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 2px;
+    width: fit-content;
+    margin: 0px auto;
 }
 .form button:hover{
     border: 2px solid orangered;
     background-color: orangered;
     color: white;
+    transition: all ease-in-out 1s;
     cursor: pointer;
 }
