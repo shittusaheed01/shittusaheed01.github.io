@@ -2,13 +2,11 @@ import React,{useState} from 'react'
 import './Home.css'
 import {HiArrowRight} from 'react-icons/hi'
 import { Link } from 'react-scroll'
-// import TypeAnimation from 'react-type-animation';
 
 const Home = () => {
   const [hov, setHov] = useState(false)
   const handleHover = () => setHov(!hov)
   const handleHovOut = () => setHov(!hov)
-  
   return (
     <div name="home" className="home">
       <div className='home-cont'>
@@ -28,10 +26,9 @@ const Home = () => {
       <span style={{"--i": 12}}>t</span>
       <span style={{"--i": 13}}>u</span>
       <span style={{"--i": 14}}>,</span></h1>
-      <h2>I am a Frontend Developer</h2>
+      <h2>I am a Software Developer</h2>
       <p>
-        
-        I'm A Frontend developer, with a keen eye for the littlest detail in designs. I'm focused on building responsive frontend applications because I enjoy seeing designs come to life
+      developer skilled at building both server-side and client-side applications.
       </p>
       <div className='home-btn'>
       <Link to="projects" smooth={true} duration={500}>

@@ -6,6 +6,7 @@ import CSS from "./images/css.png";
 import Github from "./images/github.png";
 import Javascript from "./images/javascript.png";
 import ReactImg from "./images/react.png";
+import Express from "./images/express.png";
 
 
 // loading-name css is in the about css
@@ -28,6 +29,10 @@ const Skills = () => {
           <div className="skills-img-div">
             <img src={Javascript} alt="Javascript Icon" />
             <p>Javascript</p>
+          </div>
+          <div className="skills-img-div">
+            <img src={Express} alt="Javascript Icon" />
+            <p>Express</p>
           </div>
           <div className="skills-img-div">
             <img src={ReactImg} alt="React Icon" />

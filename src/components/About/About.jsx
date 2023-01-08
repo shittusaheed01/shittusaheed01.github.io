@@ -17,7 +17,7 @@ const About = () => {
             </h2>
             <div className='about-main'>
                 <p className='about-intro'>Hi. I'm Saheed, it's nice to have you here. Feel free to scroll around!</p>
-                <p className='about-dets'>I'm passionate about building and learning about web tools and applications. Seeing designs come to life is one of the reasons I enjoy doing this.</p>
+                <p className='about-dets'> I am efficient at writing code that powers the application, integrating the application with other systems, writing unit tests and integration tests to ensure the stability and correctness of the API, and ensuring that the application is scalable and maintainable. I have a strong foundation in JavaScript and databases and have experience using a range of technologies and frameworks, including Node.js, Express.js, MySQL, MongoDB, Git, and React.js.</p>
             </div>
         </div>
     </div>
