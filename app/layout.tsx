@@ -1,17 +1,18 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import './globals.css';
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const _geist = Geist({ subsets: ['latin'] });
+const _geistMono = Geist_Mono({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://shittusaheed01.github.io'),
-  title: 'Saheed Shittu | Backend Engineer · Node.js · TypeScript · Lagos',
+  title:
+    'Saheed Shittu | Backend Engineer · Node.js · TypeScript · Microservices',
   description:
-    'Saheed Ademola Shittu is a Backend Engineer based in Lagos, Nigeria, specializing in Node.js, TypeScript, microservices, and scalable distributed systems. Lead Backend Engineer at Sunsystems. First-class engineering graduate.',
-  generator: 'v0.app',
+    'Saheed Ademola Shittu is a Backend Engineer, specializing in Node.js, TypeScript, microservices, and scalable distributed systems. Lead Backend Engineer at Sunsystems. First-class electrical and electronics engineering graduate.',
+  // generator: 'v0.app',
   keywords: [
     'Saheed Shittu',
     'Saheed Ademola Shittu',
@@ -25,17 +26,20 @@ export const metadata: Metadata = {
     'HIPAA backend developer',
     'distributed systems engineer Nigeria',
   ],
-  authors: [{ name: 'Saheed Ademola Shittu', url: 'https://shittusaheed01.github.io' }],
+  authors: [
+    { name: 'Saheed Ademola Shittu', url: 'https://shittusaheed01.github.io' },
+  ],
   creator: 'Saheed Ademola Shittu',
   openGraph: {
     type: 'website',
     url: 'https://shittusaheed01.github.io',
     title: 'Saheed Shittu | Backend Engineer',
-    description: 'Backend engineer building scalable, high-availability systems. Node.js · TypeScript · Microservices · Lagos, Nigeria.',
+    description:
+      'Backend engineer building scalable, high-availability systems. Node.js · TypeScript · Microservices · Lagos, Nigeria.',
     siteName: 'Saheed Shittu Portfolio',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Saheed Shittu - Backend Engineer',
@@ -45,9 +49,10 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Saheed Shittu | Backend Engineer',
-    description: 'Backend engineer building scalable systems. Node.js · TypeScript · Lagos.',
+    description:
+      'Backend engineer building scalable systems. Node.js · TypeScript · Lagos.',
     creator: '@saheed___',
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -73,18 +78,18 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/favicon.svg',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/favicon.svg',
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -129,7 +134,7 @@ export default function RootLayout({
     ],
     sameAs: [
       'https://github.com/shittusaheed01',
-      'https://www.linkedin.com/in/saheed-shittu/',
+      'https://www.linkedin.com/in/shittusaheed01/',
       'https://twitter.com/saheed___',
     ],
     address: {
@@ -152,5 +157,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
