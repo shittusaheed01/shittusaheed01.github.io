@@ -72,27 +72,38 @@ export function Hero() {
 
         <AnimatedSection delay={0.4}>
           <p className="mb-10 max-w-2xl text-sm text-foreground/70 sm:text-base lg:text-lg leading-relaxed">
-            Backend engineer with 3+ years architecting scalable, high-availability systems
-            serving 2,000+ users and 900+ enterprise clients. Expert in Node.js/TypeScript,
-            event-driven architecture, and HIPAA-compliant healthcare platforms. First-class
-            engineering graduate combining deep technical depth with clear communication.
+            Backend engineer with 3+ years architecting scalable,
+            high-availability systems serving 5,000+ users and 900+ enterprise
+            clients. Expert in Node.js/TypeScript, event-driven architecture,
+            and HIPAA-compliant healthcare platforms. First-class engineering
+            graduate combining deep technical depth with clear communication.
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay={0.5}>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(0, 229, 255, 0.4)' }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: '0 0 20px rgba(0, 229, 255, 0.4)',
+              }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('contact')?.scrollIntoView()}
+              onClick={() =>
+                document.getElementById('contact')?.scrollIntoView()
+              }
               className="rounded-lg bg-accent px-6 py-2.5 sm:px-8 sm:py-3 font-semibold text-primary-foreground text-sm sm:text-base transition-all hover:bg-accent/90"
             >
               Get in Touch
             </motion.button>
             <motion.button
-              whileHover={{ scale: 1.05, borderColor: 'rgba(0, 229, 255, 0.6)' }}
+              whileHover={{
+                scale: 1.05,
+                borderColor: 'rgba(0, 229, 255, 0.6)',
+              }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('projects')?.scrollIntoView()}
+              onClick={() =>
+                document.getElementById('projects')?.scrollIntoView()
+              }
               className="rounded-lg border-2 border-accent/30 px-6 py-2.5 sm:px-8 sm:py-3 font-semibold text-accent text-sm sm:text-base transition-all hover:border-accent/60"
             >
               View Projects
