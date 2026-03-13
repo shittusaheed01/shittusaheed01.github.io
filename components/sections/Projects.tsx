@@ -12,7 +12,7 @@ export function Projects() {
       description:
         'HIPAA-compliant backend serving 900+ registered hospitals. Architected fault-tolerant notification system with 95%+ delivery rate and 40% failure reduction.',
       tech: ['Node.js', 'TypeScript', 'MongoDB', 'AWS', 'NATS', 'Docker'],
-      link: '#',
+      link: 'https://smartcare.com.ng/',
       github: '#',
     },
     {
@@ -20,15 +20,22 @@ export function Projects() {
       description:
         'Re-architected monolithic system into independent microservices. Implemented OpenTelemetry distributed tracing, cutting debugging time by 40%.',
       tech: ['Node.js', 'Express', 'NATS', 'Redis', 'OpenTelemetry', 'Docker'],
-      link: '#',
+      link: 'https://www.bookumapp.com/',
       github: '#',
     },
     {
       title: 'Enterprise CMS & Government Portal',
       description:
         'Built scalable CMS and public API infrastructure for local government serving 2,000+ residents at 99.8% uptime. Optimized queries reducing response time by 35%.',
-      tech: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'AWS', 'GitHub Actions'],
-      link: '#',
+      tech: [
+        'Node.js',
+        'TypeScript',
+        'PostgreSQL',
+        'Redis',
+        'AWS',
+        'GitHub Actions',
+      ],
+      link: 'https://ifakoijaiye.lg.gov.ng/',
       github: '#',
     },
   ];
@@ -81,6 +88,7 @@ export function Projects() {
                   </motion.a>
                   <motion.a
                     href={project.github}
+                    aria-disabled={project.github === '#'}
                     rel="noopener noreferrer"
                     target="_blank"
                     whileHover={{ x: 5 }}
