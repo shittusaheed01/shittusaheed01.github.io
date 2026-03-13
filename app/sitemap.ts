@@ -1,4 +1,6 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
+
+export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -8,5 +10,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1,
     },
-  ]
+  ];
 }

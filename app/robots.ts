@@ -1,4 +1,6 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
+
+export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,5 +9,5 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
     },
     sitemap: 'https://shittusaheed01.github.io/sitemap.xml',
-  }
+  };
 }
