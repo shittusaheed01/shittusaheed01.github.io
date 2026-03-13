@@ -86,18 +86,28 @@ export function Projects() {
                     <span>Live Demo</span>
                     <ExternalLink size={16} aria-hidden="true" />
                   </motion.a>
-                  <motion.a
-                    href={project.github}
-                    aria-disabled={project.github === '#'}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    whileHover={{ x: 5 }}
-                    className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
-                    aria-label={`View source code for ${project.title}`}
-                  >
-                    <span>Code</span>
-                    <Github size={16} aria-hidden="true" />
-                  </motion.a>
+                  {project.github === '#' ? (
+                    <span
+                      className="inline-flex items-center gap-2 text-sm text-accent/50 cursor-not-allowed"
+                      aria-label={`Source code for ${project.title} is not available`}
+                    >
+                      <span>Code</span>
+                      <Github size={16} aria-hidden="true" />
+                    </span>
+                  ) : (
+                    <motion.a
+                      href={project.github}
+                      aria-disabled={project.github === '#'}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      whileHover={{ x: 5 }}
+                      className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
+                      aria-label={`View source code for ${project.title}`}
+                    >
+                      <span>Code</span>
+                      <Github size={16} aria-hidden="true" />
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </GlowCard>
