@@ -9,15 +9,31 @@ export function About() {
   const stats = [
     { label: 'Years Experience', value: '3+' },
     { label: 'Enterprise Clients', value: '900+' },
-    { label: 'Users Served', value: '2K+' },
+    { label: 'Users Served', value: '5K+' },
     { label: 'Uptime Record', value: '99.8%' },
   ];
 
   const highlights = [
-    { icon: Code2, label: 'Backend Architecture', desc: 'Node.js, TypeScript, Microservices' },
-    { icon: Database, label: 'Data Systems', desc: 'PostgreSQL, MongoDB, Redis optimization' },
-    { icon: Cloud, label: 'Cloud & DevOps', desc: 'AWS, Docker, Kubernetes, CI/CD' },
-    { icon: Users, label: 'Event-Driven Systems', desc: 'NATS, distributed tracing, real-time' },
+    {
+      icon: Code2,
+      label: 'Backend Architecture',
+      desc: 'Node.js, TypeScript, Microservices',
+    },
+    {
+      icon: Database,
+      label: 'Data Systems',
+      desc: 'PostgreSQL, MongoDB, Redis optimization',
+    },
+    {
+      icon: Cloud,
+      label: 'Cloud & DevOps',
+      desc: 'AWS, Docker, Kubernetes, CI/CD',
+    },
+    {
+      icon: Users,
+      label: 'Event-Driven Systems',
+      desc: 'NATS, distributed tracing, real-time',
+    },
   ];
 
   return (
@@ -36,28 +52,34 @@ export function About() {
           <AnimatedSection delay={0.1}>
             <div className="space-y-6">
               <p className="text-base text-foreground/70 leading-relaxed">
-                Currently a Lead Backend Engineer at Sunsystems, architecting enterprise-grade
-                systems serving thousands of users and hundreds of enterprise clients. I specialize
-                in designing high-availability backends, implementing event-driven architectures,
-                and solving complex distributed systems challenges with Node.js and TypeScript.
+                Currently a Lead Backend Engineer at Sunsystems, architecting
+                enterprise-grade systems serving thousands of users and hundreds
+                of enterprise clients. I specialize in designing
+                high-availability backends, implementing event-driven
+                architectures, and solving complex distributed systems
+                challenges with Node.js and TypeScript.
               </p>
               <p className="text-base text-foreground/70 leading-relaxed">
-                My expertise spans microservices design, database optimization, HIPAA-compliant
-                systems, and DevOps/CI-CD pipelines. I'm passionate about building fault-tolerant
-                systems, implementing distributed tracing, and mentoring engineers through
-                technical growth and knowledge sharing.
+                My expertise spans microservices design, database optimization,
+                HIPAA-compliant systems, and DevOps/CI-CD pipelines. I'm
+                passionate about building fault-tolerant systems, implementing
+                distributed tracing, and mentoring engineers through technical
+                growth and knowledge sharing.
               </p>
               <p className="text-base text-foreground/70 leading-relaxed">
-                Continuous learner with a B.Eng in Electrical & Electronics (First Class Honors)
-                and a Diploma in Backend Engineering from AltSchool Africa. Author of published
-                research on power systems stability.
+                Continuous learner with a B.Eng in Electrical & Electronics
+                (First Class Honors) and a Diploma in Backend Engineering from
+                AltSchool Africa. Author of published research on power systems
+                stability.
               </p>
             </div>
           </AnimatedSection>
 
           <div className="space-y-8">
             <div>
-              <h3 className="mb-6 font-mono text-lg font-semibold text-accent">Quick Stats</h3>
+              <h3 className="mb-6 font-mono text-lg font-semibold text-accent">
+                Quick Stats
+              </h3>
               <motion.div className="grid grid-cols-2 gap-4">
                 {stats.map((stat, i) => (
                   <motion.div
@@ -65,8 +87,12 @@ export function About() {
                     whileHover={{ y: -5 }}
                     className="rounded-lg border border-accent/20 bg-card/40 p-4 backdrop-blur-sm"
                   >
-                    <div className="text-2xl font-bold text-accent">{stat.value}</div>
-                    <div className="text-sm text-foreground/60">{stat.label}</div>
+                    <div className="text-2xl font-bold text-accent">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-foreground/60">
+                      {stat.label}
+                    </div>
                   </motion.div>
                 ))}
               </motion.div>
@@ -84,10 +110,17 @@ export function About() {
                       key={i}
                       className="flex items-start gap-3 rounded-lg border border-accent/10 bg-card/20 p-3"
                     >
-                      <Icon className="mt-1 h-5 w-5 flex-shrink-0 text-accent" aria-hidden="true" />
+                      <Icon
+                        className="mt-1 h-5 w-5 flex-shrink-0 text-accent"
+                        aria-hidden="true"
+                      />
                       <div>
-                        <h3 className="font-semibold text-foreground">{item.label}</h3>
-                        <p className="text-sm text-foreground/60">{item.desc}</p>
+                        <h3 className="font-semibold text-foreground">
+                          {item.label}
+                        </h3>
+                        <p className="text-sm text-foreground/60">
+                          {item.desc}
+                        </p>
                       </div>
                     </motion.div>
                   );
