@@ -8,5 +8,5 @@
 8:I[30618,["/_next/static/chunks/150a08340a947ea6.js","/_next/static/chunks/6bf883b1fcc26d8b.js"],"Contact"]
 9:I[35417,["/_next/static/chunks/f138b5ea493103e9.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-0:{"buildId":"G7-qYBH3DIiU--jRXPOiI","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"overflow-hidden","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/6bf883b1fcc26d8b.js","async":true}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"xTT8rFWWxwuHFaBcixHzD","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"overflow-hidden","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L7",null,{}],["$","$L8",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/6bf883b1fcc26d8b.js","async":true}]],["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]]}],"loading":null,"isPartial":false}
 b:null
