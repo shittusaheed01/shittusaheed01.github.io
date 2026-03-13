@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { AnimatedSection } from '@/components/AnimatedSection';
-import { Mail, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Github, Twitter, PhoneCall } from 'lucide-react';
 
 export function Contact() {
   const contactLinks = [
@@ -15,17 +15,17 @@ export function Contact() {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/saheed',
-      href: 'https://linkedin.com/in/saheed-shittu',
+      value: 'linkedin.com/in/shittusaheed01',
+      href: 'https://www.linkedin.com/in/shittusaheed01/',
     },
     {
       icon: Github,
       label: 'GitHub',
-      value: 'github.com/saheed',
-      href: 'https://github.com/saheed',
+      value: 'github.com/shittusaheed01',
+      href: 'https://github.com/shittusaheed01',
     },
     {
-      icon: Mail,
+      icon: PhoneCall,
       label: 'Phone',
       value: '+2348133023119',
       href: 'tel:+2348133023119',
@@ -44,8 +44,9 @@ export function Contact() {
               Let's work together
             </h2>
             <p className="mb-12 max-w-2xl text-base text-foreground/70 sm:text-lg">
-              I'm always interested in hearing about new projects and opportunities. Feel free
-              to reach out through any of the channels below.
+              I'm always interested in hearing about new projects and
+              opportunities. Feel free to reach out through any of the channels
+              below.
             </p>
           </div>
         </AnimatedSection>
@@ -72,7 +73,9 @@ export function Contact() {
                     <Icon className="h-6 w-6 text-accent" aria-hidden="true" />
                   </div>
                 </motion.div>
-                <h3 className="mb-2 font-semibold text-foreground">{contact.label}</h3>
+                <h3 className="mb-2 font-semibold text-foreground">
+                  {contact.label}
+                </h3>
                 <p className="text-sm text-foreground/60 group-hover:text-accent transition-colors">
                   {contact.value}
                 </p>
@@ -86,7 +89,10 @@ export function Contact() {
           <div className="mt-12 text-center">
             <motion.a
               href="mailto:shittusaheed01@gmail.com"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 229, 255, 0.3)' }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: '0 0 30px rgba(0, 229, 255, 0.3)',
+              }}
               whileTap={{ scale: 0.95 }}
               className="inline-block rounded-lg bg-gradient-to-r from-accent to-secondary px-10 py-4 font-semibold text-primary-foreground transition-all hover:shadow-lg"
             >
