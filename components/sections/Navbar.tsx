@@ -26,8 +26,16 @@ export function Navbar() {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    {
+      icon: Github,
+      href: 'https://github.com/shittusaheed01',
+      label: 'GitHub',
+    },
+    {
+      icon: Linkedin,
+      href: 'https://linkedin.com/in/shittusaheed01',
+      label: 'LinkedIn',
+    },
     { icon: Mail, href: 'mailto:shittusaheed01@gmail.com', label: 'Email' },
   ];
 
@@ -51,7 +59,9 @@ export function Navbar() {
             className="flex items-center gap-2"
           >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-accent to-secondary">
-              <span className="font-mono text-sm font-bold text-primary-foreground">SA</span>
+              <span className="font-mono text-sm font-bold text-primary-foreground">
+                SA
+              </span>
             </div>
             <span className="hidden font-mono font-semibold text-accent sm:inline">
               Saheed
