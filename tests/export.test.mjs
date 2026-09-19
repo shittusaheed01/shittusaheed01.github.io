@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { spawn } from 'node:child_process';
 
 const root = resolve('out');
 const html = readFileSync(resolve(root, 'index.html'), 'utf8');
@@ -120,4 +121,27 @@ test('the academic route has isolated search metadata and discoverable sitemap e
     assert.ok(ids.has(anchor), `Broken academic anchor: #${anchor}`);
   }
   assert.ok(readFileSync(resolve(root, 'sitemap.xml'), 'utf8').includes(`<loc>${academicCanonical}</loc>`));
+});
+
+test('the preview server resolves the academic route when an export diagnostics directory exists', async (t) => {
+  const port = 3045;
+  const server = spawn(process.execPath, ['scripts/serve.mjs'], {
+    cwd: resolve('.'),
+    env: { ...process.env, PORT: String(port) },
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+  t.after(() => server.kill());
+  await new Promise((resolveReady, rejectReady) => {
+    const timeout = setTimeout(() => rejectReady(new Error('Preview server did not start')), 5000);
+    server.stdout.on('data', (chunk) => {
+      if (chunk.toString().includes('Portfolio preview:')) {
+        clearTimeout(timeout);
+        resolveReady();
+      }
+    });
+    server.once('error', rejectReady);
+  });
+  const response = await fetch(`http://127.0.0.1:${port}/academic-portfolio/`);
+  assert.equal(response.status, 200);
+  assert.ok((await response.text()).includes('Renewable Power and Electricity Systems'));
 });

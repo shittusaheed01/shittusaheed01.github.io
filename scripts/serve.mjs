@@ -24,8 +24,13 @@ createServer(async (request, response) => {
       response.writeHead(403);
       return response.end();
     }
-    if (existsSync(file) && (await stat(file)).isDirectory()) file = resolve(file, 'index.html');
-    else if (!existsSync(file) && !extname(file)) file += '.html';
+    const flatFile = !extname(pathname) ? resolve(root, '.' + pathname.replace(/\/$/, '') + '.html') : null;
+    if (existsSync(file) && (await stat(file)).isDirectory()) {
+      const indexFile = resolve(file, 'index.html');
+      file = existsSync(indexFile) ? indexFile : flatFile && existsSync(flatFile) ? flatFile : indexFile;
+    } else if (!existsSync(file) && flatFile) {
+      file = flatFile;
+    }
     const body = await readFile(file);
     response.writeHead(200, { 'Content-Type': types[extname(file)] || 'application/octet-stream', 'X-Content-Type-Options': 'nosniff' });
     response.end(request.method === 'HEAD' ? undefined : body);
@@ -35,3 +40,4 @@ createServer(async (request, response) => {
     response.end(request.method === 'HEAD' ? undefined : fallback);
   }
 }).listen(port, '127.0.0.1', () => console.log(`Portfolio preview: http://localhost:${port}`));
+
