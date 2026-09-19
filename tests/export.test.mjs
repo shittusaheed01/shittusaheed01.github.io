@@ -89,7 +89,7 @@ test('canonical, social previews, sitemap, and robots agree on the public URL', 
     'google-site-verification: google493186a87c1e16f8.html');
 });
 
-const academicPath = resolve(root, 'academic-portfolio.html');
+const academicPath = resolve(root, 'academic-portfolio', 'index.html');
 
 test('the academic portfolio exports its verified public profile', () => {
   assert.ok(existsSync(academicPath), 'Missing academic portfolio export');
@@ -115,6 +115,13 @@ test('the academic route has isolated search metadata and discoverable sitemap e
   assert.equal(new URL(academicHtml.match(/property="og:url" content="([^"]+)"/)?.[1]).href, academicCanonical);
   assert.ok(academicHtml.includes('Electrical Engineering Research Portfolio'));
   assert.ok(academicHtml.includes('application/ld+json'));
+  const academicScripts = [...academicHtml.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+  const academicEntities = academicScripts.flatMap(script => script['@graph'] ?? [script]);
+  const academicPage = academicEntities.find(entity => entity['@type'] === 'ProfilePage');
+  assert.equal(academicPage?.url, academicCanonical);
+  assert.equal(academicPage?.mainEntity?.['@type'], 'Person');
+  assert.equal(academicPage?.mainEntity?.name, 'Saheed Shittu');
+  assert.equal(academicPage?.mainEntity?.['@id'], `${academicCanonical}#person`);
   assert.ok(!academicHtml.includes('SmartCare'));
   const ids = new Set([...academicHtml.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
   for (const anchor of [...academicHtml.matchAll(/href="#([^"]+)"/g)].map(match => match[1])) {
@@ -145,3 +152,4 @@ test('the preview server resolves the academic route when an export diagnostics 
   assert.equal(response.status, 200);
   assert.ok((await response.text()).includes('Renewable Power and Electricity Systems'));
 });
+
