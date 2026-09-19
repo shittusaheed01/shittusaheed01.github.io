@@ -88,7 +88,7 @@ test('canonical, social previews, sitemap, and robots agree on the public URL', 
     'google-site-verification: google493186a87c1e16f8.html');
 });
 
-const academicPath = resolve(root, 'academic-portfolio', 'index.html');
+const academicPath = resolve(root, 'academic-portfolio.html');
 
 test('the academic portfolio exports its verified public profile', () => {
   assert.ok(existsSync(academicPath), 'Missing academic portfolio export');
@@ -105,3 +105,4 @@ test('the academic portfolio exports its verified public profile', () => {
     assert.ok(!markup.toLowerCase().includes(privateText.toLowerCase()), `Private or incomplete content found: ${privateText}`);
   }
 });
+
