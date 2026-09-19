@@ -153,3 +153,11 @@ test('the preview server resolves the academic route when an export diagnostics 
   assert.ok((await response.text()).includes('Renewable Power and Electricity Systems'));
 });
 
+
+test('the portfolio includes Readwave and links the academic solar calculator', () => {
+  assert.ok(html.includes('Readwave'));
+  assert.ok(html.includes('A text-to-speech workspace')); 
+  const academicHtml = readFileSync(academicPath, 'utf8');
+  assert.ok(academicHtml.includes('href="https://rating-calculator.vercel.app/"'));
+});
+

@@ -43,6 +43,15 @@ export const projects = [
     tech: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'AWS', 'GitHub Actions'],
     link: 'https://ifakoijaiye.lg.gov.ng/', visual: 'portal',
   },
+  {
+    number: '04', name: 'Readwave', category: 'Accessible media',
+    title: 'Documents, made listenable.',
+    description: 'A text-to-speech workspace that turns pasted text and readable documents into a focused listening experience.',
+    metric: '7 formats', metricLabel: 'supported document types',
+    detail: 'Readwave supports PDF, DOCX, TXT, Markdown, HTML, CSV, and JSON, with device voices available in compatible browsers and optional downloadable MP3 audio.',
+    tech: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express', 'Text-to-Speech'],
+    link: 'https://readwave.vercel.app/', visual: 'audio',
+  },
 ];
 
 export const experiences = [
@@ -106,3 +115,4 @@ export const skillCategories = [
       skills: ['HIPAA Compliance', 'Healthcare Systems', 'API Development', 'Testing', 'DevOps'],
     },
   ];
+

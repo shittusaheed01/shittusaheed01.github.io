@@ -64,6 +64,7 @@ export const academicProject = {
     'Built the original Sunwise calculator to estimate inverter, battery, and solar-array requirements.',
     'Earned a project grade of 80/100 (A).',
   ],
+  calculatorUrl: 'https://rating-calculator.vercel.app/',
 } as const;
 
 export const academicTeaching = {
@@ -82,3 +83,4 @@ export const academicCertificates = [
   { title: 'Embedded Systems (Arduino)', issuer: 'Professional development', year: '2019' },
   { title: 'Renewable Power and Electricity Systems', issuer: 'University of Colorado Boulder via Coursera', year: '2026' },
 ] as const;
+
