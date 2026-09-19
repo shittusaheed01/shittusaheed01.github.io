@@ -106,3 +106,18 @@ test('the academic portfolio exports its verified public profile', () => {
   }
 });
 
+
+test('the academic route has isolated search metadata and discoverable sitemap entry', () => {
+  const academicHtml = readFileSync(academicPath, 'utf8');
+  const academicCanonical = 'https://shittusaheed01.github.io/academic-portfolio/';
+  assert.equal(new URL(academicHtml.match(/rel="canonical" href="([^"]+)"/)?.[1]).href, academicCanonical);
+  assert.equal(new URL(academicHtml.match(/property="og:url" content="([^"]+)"/)?.[1]).href, academicCanonical);
+  assert.ok(academicHtml.includes('Electrical Engineering Research Portfolio'));
+  assert.ok(academicHtml.includes('application/ld+json'));
+  assert.ok(!academicHtml.includes('SmartCare'));
+  const ids = new Set([...academicHtml.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
+  for (const anchor of [...academicHtml.matchAll(/href="#([^"]+)"/g)].map(match => match[1])) {
+    assert.ok(ids.has(anchor), `Broken academic anchor: #${anchor}`);
+  }
+  assert.ok(readFileSync(resolve(root, 'sitemap.xml'), 'utf8').includes(`<loc>${academicCanonical}</loc>`));
+});
