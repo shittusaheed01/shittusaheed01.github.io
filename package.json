@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3033",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint .",
-    "test": ""
+    "start": "node scripts/serve.mjs",
+    "lint": "pnpm run typecheck",
+    "test": "node --test tests/export.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm run typecheck && pnpm run build && pnpm run test"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

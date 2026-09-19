@@ -1,14 +1,9 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
+import { site } from '@/lib/seo';
 
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://shittusaheed01.github.io',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-  ];
+  // Omit lastModified instead of claiming every rebuild changes the page content.
+  return [{ url: site.url }];
 }

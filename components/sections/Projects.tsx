@@ -1,119 +1,118 @@
-'use client';
+import { ArrowUpRight, Activity, ArrowRight, Building2, ChevronDown, GitBranch, LockKeyhole } from 'lucide-react';
+import { SectionHeading } from '@/components/SectionHeading';
+import { projects, profile } from '@/lib/portfolio';
 
-import { motion } from 'framer-motion';
-import { AnimatedSection } from '@/components/AnimatedSection';
-import { GlowCard } from '@/components/GlowCard';
-import { ExternalLink, Github } from 'lucide-react';
+function ProjectVisual({ kind }: { kind: string }) {
+  if (kind === 'healthcare') return (
+    <div className="project-visual visual-healthcare" aria-hidden="true">
+      <div className="visual-label">
+<Activity size={16} /> HEALTHCARE NETWORK</div>
+      <div className="health-network">
+<span className="network-end">
+<Building2 size={20} />
+</span>
+<i />
+<span className="network-core">
+<Activity size={30} />
+</span>
+<i />
+<span className="network-end">
+<LockKeyhole size={20} />
+</span>
+</div>
+      <div className="visual-foot">
+<span>Hospitals</span>
+<span>Connected care</span>
+<span>Secure access</span>
+</div>
+    </div>
+  );
+  if (kind === 'services') return (
+    <div className="project-visual visual-services" aria-hidden="true">
+      <div className="visual-label">
+<GitBranch size={16} /> INDEPENDENT SERVICES</div>
+      <div className="service-flow">
+<span>API</span>
+<ArrowRight size={20} />
+<div>
+<span>Service 01</span>
+<span>Service 02</span>
+<span>Service 03</span>
+</div>
+</div>
+      <div className="visual-foot">
+<span>Event-driven</span>
+<span>Traceable requests</span>
+</div>
+    </div>
+  );
+  return (
+    <div className="project-visual visual-portal" aria-hidden="true">
+      <div className="visual-label">
+<Building2 size={16} /> PUBLIC SERVICE INFRASTRUCTURE</div>
+      <div className="portal-window">
+<div className="portal-toolbar">
+<span />
+<span />
+<span />
+</div>
+<div className="portal-content">
+<div className="portal-sidebar" />
+<div className="portal-body">
+<i />
+<i />
+<div>
+<span />
+<span />
+<span />
+</div>
+</div>
+</div>
+</div>
+      <div className="visual-foot">
+<span>Public portal</span>
+<span>CMS + API</span>
+</div>
+    </div>
+  );
+}
 
 export function Projects() {
-  const projects = [
-    {
-      title: 'Enterprise Healthcare Platform',
-      description:
-        'HIPAA-compliant backend serving 900+ registered hospitals. Architected fault-tolerant notification system with 95%+ delivery rate and 40% failure reduction.',
-      tech: ['Node.js', 'TypeScript', 'MongoDB', 'AWS', 'NATS', 'Docker'],
-      link: 'https://smartcare.com.ng/',
-      github: '#',
-    },
-    {
-      title: 'Microservices Architecture Transformation',
-      description:
-        'Re-architected monolithic system into independent microservices. Implemented OpenTelemetry distributed tracing, cutting debugging time by 40%.',
-      tech: ['Node.js', 'Express', 'NATS', 'Redis', 'OpenTelemetry', 'Docker'],
-      link: 'https://www.bookumapp.com/',
-      github: '#',
-    },
-    {
-      title: 'Enterprise CMS & Government Portal',
-      description:
-        'Built scalable CMS and public API infrastructure for local government serving 2,000+ residents at 99.8% uptime. Optimized queries reducing response time by 35%.',
-      tech: [
-        'Node.js',
-        'TypeScript',
-        'PostgreSQL',
-        'Redis',
-        'AWS',
-        'GitHub Actions',
-      ],
-      link: 'https://ifakoijaiye.lg.gov.ng/',
-      github: '#',
-    },
-  ];
-
   return (
-    <section id="projects" className="relative py-20 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
-          <div className="mb-4 inline-block rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm text-accent font-mono">
-            Projects
-          </div>
-          <h2 className="mb-12 font-mono text-3xl font-bold sm:text-4xl">
-            Featured Work
-          </h2>
-        </AnimatedSection>
-
-        <div className="grid gap-8 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <GlowCard key={index} delay={index * 0.1} className="flex flex-col">
-              <div className="flex-1 p-6">
-                <h3 className="mb-3 font-mono text-lg font-semibold text-accent">
-                  {project.title}
-                </h3>
-                <p className="mb-6 text-foreground/70">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent font-mono"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="border-t border-accent/10 px-6 py-4">
-                <div className="flex items-center gap-4">
-                  <motion.a
-                    href={project.link}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    whileHover={{ x: 5 }}
-                    className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
-                    aria-label={`View live demo of ${project.title}`}
-                  >
-                    <span>Live Demo</span>
-                    <ExternalLink size={16} aria-hidden="true" />
-                  </motion.a>
-                  {project.github === '#' ? (
-                    <span
-                      className="inline-flex items-center gap-2 text-sm text-accent/50 cursor-not-allowed"
-                      aria-label={`Source code for ${project.title} is not available`}
-                    >
-                      <span>Code</span>
-                      <Github size={16} aria-hidden="true" />
-                    </span>
-                  ) : (
-                    <motion.a
-                      href={project.github}
-                      aria-disabled={project.github === '#'}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                      whileHover={{ x: 5 }}
-                      className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent/80 transition-colors"
-                      aria-label={`View source code for ${project.title}`}
-                    >
-                      <span>Code</span>
-                      <Github size={16} aria-hidden="true" />
-                    </motion.a>
-                  )}
-                </div>
-              </div>
-            </GlowCard>
-          ))}
-        </div>
+    <section id="projects" className="section shell" aria-label="Selected work" tabIndex={-1}>
+      <SectionHeading number="01" label="Selected work" title="Built for the real world." description="A few systems I’ve helped build, and the problems they solve." />
+      <div className="projects-grid">
+        {projects.map(project => (
+          <article key={project.name} className={`project-card project-${project.visual}`}>
+            <ProjectVisual kind={project.visual} />
+            <div className="project-body">
+              <p className="project-category">
+<span>{project.number} / {project.category}</span>
+</p>
+              <h3>{project.name}<span>{project.title}</span>
+</h3>
+              <p className="project-description">{project.description}</p>
+              <div className="project-result">
+<strong>{project.metric}</strong>
+<span>{project.metricLabel}</span>
+</div>
+              <ul className="tags" aria-label={`${project.name} technologies`}>{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul>
+              <details className="project-details">
+<summary>Engineering details <ChevronDown size={16} aria-hidden="true" />
+</summary>
+<p>{project.detail}</p>
+</details>
+            </div>
+            <div className="project-footer">
+<a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website (opens in a new tab)`}>Visit website <ArrowUpRight size={17} aria-hidden="true" />
+</a>
+<span>Source unavailable</span>
+</div>
+          </article>
+        ))}
       </div>
+      <a className="text-link projects-more" href={profile.github} target="_blank" rel="noopener noreferrer">More on GitHub <ArrowUpRight size={17} aria-hidden="true" />
+</a>
     </section>
   );
 }

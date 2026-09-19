@@ -8,14 +8,17 @@ import { Contact } from '@/components/sections/Contact';
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
+        <Projects />
+        <Experience />
+        <About />
+        <Skills />
+      </main>
       <Contact />
-    </main>
+    </>
   );
 }
