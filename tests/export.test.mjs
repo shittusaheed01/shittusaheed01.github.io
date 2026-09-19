@@ -87,3 +87,21 @@ test('canonical, social previews, sitemap, and robots agree on the public URL', 
   assert.equal(readFileSync(resolve(root, 'google493186a87c1e16f8.html'), 'utf8').trim(),
     'google-site-verification: google493186a87c1e16f8.html');
 });
+
+const academicPath = resolve(root, 'academic-portfolio', 'index.html');
+
+test('the academic portfolio exports its verified public profile', () => {
+  assert.ok(existsSync(academicPath), 'Missing academic portfolio export');
+  const academicHtml = readFileSync(academicPath, 'utf8');
+  const markup = academicHtml.replace(/<script[\s\S]*?<\/script>/g, '');
+  for (const text of [
+    'Saheed Shittu',
+    'Electrical and Electronics Engineering',
+    'Comprehensive eigenvalue-based assessment',
+    'Embedded Systems (Arduino)',
+    'Renewable Power and Electricity Systems',
+  ]) assert.ok(markup.includes(text), `Missing academic content: ${text}`);
+  for (const privateText of ['Recommendation Letter', 'Statement of Purpose', 'referee', 'in progress']) {
+    assert.ok(!markup.toLowerCase().includes(privateText.toLowerCase()), `Private or incomplete content found: ${privateText}`);
+  }
+});
