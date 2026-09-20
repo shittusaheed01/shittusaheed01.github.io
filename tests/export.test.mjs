@@ -161,3 +161,9 @@ test('the portfolio includes Readwave and links the academic solar calculator', 
   assert.ok(academicHtml.includes('href="https://rating-calculator.vercel.app/"'));
 });
 
+
+test('both portfolio routes expose an accessible color-theme control', () => {
+  const academicHtml = readFileSync(academicPath, 'utf8');
+  assert.ok(html.includes('Switch color theme'));
+  assert.ok(academicHtml.includes('Switch color theme'));
+});

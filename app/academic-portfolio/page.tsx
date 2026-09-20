@@ -1,4 +1,4 @@
-import styles from './academic-portfolio.module.css';
+import { ThemeToggle } from '@/components/ThemeToggle'; import styles from './academic-portfolio.module.css';
 import {
   academicCertificates,
   academicEducation,
@@ -17,9 +17,12 @@ export default function AcademicPortfolioPage() {
       <a className={styles.skipLink} href="#main-content">Skip to content</a>
       <header className={styles.siteHeader}>
         <a className={styles.wordmark} href="#main-content" aria-label="Saheed Shittu academic portfolio home"><span>Saheed Shittu</span><span>Academic portfolio</span></a>
-        <nav className={styles.navigation} aria-label="Academic portfolio sections">
-          {academicNavigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
-        </nav>
+        <div className={styles.headerActions}>
+          <ThemeToggle className={styles.themeToggle} />
+          <nav className={styles.navigation} aria-label="Academic portfolio sections">
+            {academicNavigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
+          </nav>
+        </div>
       </header>
       <section id="main-content" className={styles.hero} aria-labelledby="page-title">
         <div className={styles.heroCopy}>

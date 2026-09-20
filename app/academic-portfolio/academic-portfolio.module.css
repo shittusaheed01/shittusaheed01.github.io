@@ -16,3 +16,45 @@
 @media (max-width:768px) { .siteHeader,.footer { align-items:flex-start; flex-direction:column; } .navigation { justify-content:flex-start; } .section { grid-template-columns:1fr; gap:1.3rem; } .footer { gap:1.7rem; } .emailLink { text-align:left; } }
 @media (max-width:520px) { .siteHeader,.hero,.section,.footer { width:min(100% - 2rem,76rem); } .navigation { gap:.6rem 1rem; } .metricGrid,.resultsGrid,.certificateGrid { grid-template-columns:1fr; } .metric { min-height:auto; } .metric dd { margin-top:.85rem; } .hero h1 { font-size:clamp(3.5rem,18vw,5.3rem); } }
 @media (prefers-reduced-motion:reduce) { .page *,.page *::before,.page *::after { scroll-behavior:auto !important; transition-duration:.01ms !important; animation-duration:.01ms !important; } }
+
+
+/* The academic page follows the global theme while retaining a paper-like reading surface. */
+.page {
+  --ink-soft: #3f3f46;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --tag: #f8fafc;
+  --tag-border: #cbd5e1;
+  color-scheme: light;
+}
+
+:global(.dark) .page {
+  --ink: #f1f4ed;
+  --paper: #111614;
+  --muted: #b7c0b8;
+  --rule: #405047;
+  --accent: #b8dca5;
+  --ink-soft: #d4ded5;
+  --surface: #1a211c;
+  --surface-muted: #18201a;
+  --tag: #202a22;
+  --tag-border: #4c5e4e;
+  color-scheme: dark;
+}
+
+.headerActions { display:flex; align-items:flex-start; justify-content:flex-end; gap:1rem; }
+.themeToggle { flex:0 0 auto; margin-top:-.1rem; }
+.lede,.sectionContent > p:not(.kicker),.byline,.detailList li { color:var(--ink-soft); }
+.interestList li { border-color:var(--tag-border); background:var(--tag); color:var(--ink-soft); }
+.resultsGrid li { background:var(--surface-muted); color:var(--ink-soft); }
+.certificate { background:var(--surface); }
+
+@media (max-width:768px) {
+  .headerActions { width:100%; align-items:flex-start; justify-content:space-between; gap:.75rem; }
+  .navigation { max-width:calc(100% - 3.8rem); }
+}
+
+@media (max-width:520px) {
+  .themeToggle span { display:none; }
+}
+
